@@ -154,16 +154,13 @@ export default function Hero() {
                     Net Balance
                   </div>
                   <div
-                    className="text-3xl font-bold"
+                    className="text-2xl font-bold"
                     style={{ fontFamily: 'Orbitron, monospace', color: 'var(--accent)' }}
                   >
+                    $93 USD
+                  </div>
+                  <div className="text-xs" style={{ color: 'var(--muted)', fontFamily: 'Rajdhani, sans-serif', marginTop: '0.25rem' }}>
                     ₦142,800
-                  </div>
-                  <div className="text-xs mt-0.5" style={{ color: 'var(--muted)', fontFamily: 'Rajdhani, sans-serif' }}>
-                    (~$93 USD)
-                  </div>
-                  <div className="text-xs mt-0.5" style={{ color: 'var(--muted)', fontFamily: 'Rajdhani, sans-serif' }}>
-                    (~$93 USD)
                   </div>
                   <div className="xp-bar mt-2">
                     <div className="xp-bar-fill" style={{ width: '68%' }} />
@@ -176,9 +173,9 @@ export default function Hero() {
                 {/* Mini stats */}
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   {[
-                    { label: 'Income',   val: '₦280k', usd: '~$182 USD', positive: true  },
-                    { label: 'Expenses', val: '₦137k', usd: '~$89 USD', positive: false },
-                  ].map(({ label, val, usd, positive }) => (
+                    { label: 'Income',   usd: '$182 USD', val: '₦280k', positive: true  },
+                    { label: 'Expenses', usd: '$89 USD', val: '₦137k', positive: false },
+                  ].map(({ label, usd, val, positive }) => (
                     <div
                       key={label}
                       className="rounded-lg p-3"
@@ -198,10 +195,10 @@ export default function Hero() {
                           fontSize: '1rem',
                         }}
                       >
-                        {val}
+                        {usd}
                       </div>
                       <div className="text-xs mt-0.5" style={{ color: 'var(--muted)', fontFamily: 'Rajdhani, sans-serif' }}>
-                        {usd}
+                        {val}
                       </div>
                     </div>
                   ))}
