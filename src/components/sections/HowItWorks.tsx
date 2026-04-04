@@ -31,8 +31,12 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-24 relative overflow-hidden">
       <div
-        className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full opacity-10 pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)', filter: 'blur(80px)' }}
+        className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
+        style={{ 
+          background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)', 
+          filter: 'blur(80px)',
+          opacity: 0.15
+        }}
       />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -128,8 +132,16 @@ export default function HowItWorks() {
                 className="text-sm"
                 style={{ color: 'var(--subtext)', fontFamily: 'Rajdhani, sans-serif' }}
               >
-                Every action on Plenvira is powered by Viras — our platform currency. Earn through games, spend to unlock features. 500 Viras = ₦2,000.
+                Every action on Plenvira is powered by Viras — our platform currency. Earn through games, spend to unlock features.
               </p>
+              <div style={{ marginTop: '0.75rem', padding: '0.75rem', background: 'rgba(249,115,22,0.08)', border: '1px solid rgba(249,115,22,0.2)', borderRadius: '0.5rem' }}>
+                <div style={{ fontFamily: 'Orbitron, monospace', fontWeight: 700, color: 'var(--accent)', fontSize: '1.1rem' }}>
+                  500 Viras = $1.30 USD
+                </div>
+                <div style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '0.95rem', marginTop: '0.25rem' }}>
+                  ≈ ₦2,000
+                </div>
+              </div>
             </div>
           </div>
           <div className="flex gap-3 flex-shrink-0">

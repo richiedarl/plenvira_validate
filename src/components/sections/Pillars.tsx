@@ -60,29 +60,33 @@ export default function Pillars() {
     <section id="features" className="py-24 relative overflow-hidden">
       {/* Background accent */}
       <div
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-10 pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #F97316 0%, transparent 70%)', filter: 'blur(80px)' }}
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
+        style={{ 
+          background: 'radial-gradient(circle, #F97316 0%, transparent 70%)', 
+          filter: 'blur(80px)',
+          opacity: 0.15
+        }}
       />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-12" style={{ background: '#F97316' }} />
+            <div className="h-px w-12" style={{ background: 'var(--accent)' }} />
             <span
               className="text-xs uppercase tracking-widest"
-              style={{ fontFamily: 'Rajdhani, sans-serif', color: '#F97316' }}
+              style={{ fontFamily: 'Rajdhani, sans-serif', color: 'var(--accent)' }}
             >
               Core Pillars
             </span>
           </div>
           <h2
             className="text-4xl md:text-5xl font-bold max-w-2xl leading-tight"
-            style={{ fontFamily: 'Orbitron, monospace', color: '#F0F4FF' }}
+            style={{ fontFamily: 'Orbitron, monospace', color: 'var(--text)' }}
           >
             One Platform.
             <br />
-            <span style={{ color: '#F97316' }}>Four Superpowers.</span>
+            <span style={{ color: 'var(--accent)' }}>Four Superpowers.</span>
           </h2>
         </div>
 
@@ -106,13 +110,13 @@ export default function Pillars() {
 
               <h3
                 className="text-lg font-bold mb-3"
-                style={{ fontFamily: 'Orbitron, monospace', color: '#F0F4FF', fontSize: '1rem' }}
+                style={{ fontFamily: 'Orbitron, monospace', color: 'var(--text)', fontSize: '1rem' }}
               >
                 {title}
               </h3>
               <p
                 className="text-sm leading-relaxed mb-4"
-                style={{ color: '#8BA3C7', fontFamily: 'Rajdhani, sans-serif', fontSize: '0.95rem', fontWeight: 400 }}
+                style={{ color: 'var(--subtext)', fontFamily: 'Rajdhani, sans-serif', fontSize: '0.95rem', fontWeight: 400 }}
               >
                 {desc}
               </p>
@@ -121,7 +125,7 @@ export default function Pillars() {
               <div
                 className="text-xs pt-4 mt-auto"
                 style={{
-                  color: '#4A6585',
+                  color: 'var(--muted)',
                   fontFamily: 'Rajdhani, sans-serif',
                   borderTop: '1px solid rgba(249,115,22,0.08)',
                   letterSpacing: '0.05em',

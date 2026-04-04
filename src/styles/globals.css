@@ -263,16 +263,16 @@ html.light-theme {
 
   /* Logo sizing */
   .logo-icon {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     flex-shrink: 0;
   }
 
   @media (min-width: 640px) {
     .logo-icon {
-      width: 56px;
-      height: 56px;
+      width: 66px;
+      height: 66px;
     }
   }
 }

@@ -1,6 +1,24 @@
 'use client'
+import { useState, useEffect } from 'react'
 
 export default function Footer() {
+  const [isDark, setIsDark] = useState(true)
+
+  useEffect(() => {
+    // Check initial theme
+    const isDarkMode = document.documentElement.classList.contains('light-theme') === false
+    setIsDark(isDarkMode)
+
+    // Watch for theme changes
+    const observer = new MutationObserver(() => {
+      const isDarkMode = document.documentElement.classList.contains('light-theme') === false
+      setIsDark(isDarkMode)
+    })
+
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <footer
       className="py-12 relative"
@@ -11,31 +29,16 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex items-center gap-3">
             <img
-              src="/logo.svg"
+              src={isDark ? '/images/logowhite.png' : '/images/logoblack.png'}
               alt="Plenvira Logo"
-              className="w-8 h-8 object-contain"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement
-                target.style.display = 'none'
-                const parent = target.parentElement
-                if (parent) {
-                  const fallback = document.createElement('div')
-                  fallback.innerHTML = `
-                    <svg viewBox="0 0 36 36" fill="none" class="w-8 h-8">
-                      <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="none" stroke="#F97316" strokeWidth="1.5"/>
-                      <text x="18" y="22" text-anchor="middle" fill="#F97316" font-size="10" font-family="Orbitron" font-weight="700">P</text>
-                    </svg>
-                  `
-                  parent.appendChild(fallback.firstChild as Node)
-                }
-              }}
+              className="w-12 h-12 object-contain"
             />
-            <span
+            {/* <span
               className="text-base font-bold tracking-widest uppercase"
               style={{ fontFamily: 'Orbitron, monospace', color: 'var(--text)' }}
             >
               Plenvira
-            </span>
+            </span> */}
           </div>
 
           {/* Tagline */}
